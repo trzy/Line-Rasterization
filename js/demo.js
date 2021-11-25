@@ -93,6 +93,10 @@ function update()
       break;
     case "exact":
       plotLineExact(g_grid, g_width, g_height, g_lineStart[0], g_lineStart[1], g_lineEnd[0], g_lineEnd[1]);
+      break;
+    case "amanatides_woo":
+      plotLineAmanatidesWoo(g_grid, g_width, g_height, g_lineStart[0], g_lineStart[1], g_lineEnd[0], g_lineEnd[1]);
+      break;
     default:
       break;
     }
