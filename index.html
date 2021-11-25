@@ -1,0 +1,37 @@
+<!--
+  Line Rasterization
+  Bart Trzynadlowski, 2021
+-->
+
+<html>
+  <head>
+    <style>
+      canvas { border: 1px solid black; }
+    </style>
+    <script type="text/javascript" src="js/jquery.2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/bresenham.js"></script>
+    <script type="text/javascript" src="js/exact.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() { lineRasterDemo(); });
+    </script>
+    <title>Line Rasterization</title>
+  </head>
+  <body>
+    <h1>Line Rasterization</h1>
+    <p>Click on grid to plot lines using one of the following algorithms:</p>
+    <ul>
+      <li>Bresenham - Suitable for displaying lines visually. Endpoints must be clamped to integral values.</li>
+      <li>Exact - Captures all discrete grid points the line passes through.</li>
+    </ul>
+    <canvas id="Viewport" width="1024" height="768"></canvas>
+    <p></p><b>Cursor coordinate: </b><span id="Coords"></span>
+    <p></p><b>Algorithm: </b>
+    <select id="Algorithm">
+      <option value="bresenham" selected>Bresenham</option>
+      <option value="exact">Exact</option>
+    </select>
+    <p></p>
+    <p>Source code: [ <a href="js/demo.js" target="_blank">demo.js</a> ] [ <a href="js/bresenham.js" target="_blank">bresenham.js</a> ] [ <a href="js/exact.js" target="_blank">exact.js</a> ]</p>
+  </body>
+</html>
