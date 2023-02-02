@@ -24,9 +24,14 @@ function plotLineAmanatidesWoo(grid, width, height, x1, y1, x2, y2)
   var x = Math.floor(ux + 0.5);
   var y = Math.floor(uy + 0.5);
 
-  // Integral step increments
-  var stepX = Math.sign(vx);
-  var stepY = Math.sign(vy);
+  // Integral step increments. Note: sign can be 0 here, which will cause the
+  // traversal loop to bail too early. In this demo, the input coordinates
+  // are fractional and it is unlikely that e.g. x1 == x2 but it does
+  // occasionally happen if the mouse cursor is positioned just right for
+  // perfectly horizontal or vertical lines. The sign function should return +1
+  // for an input of 0 (unlike in JavaScript) to fix this behavior.
+  var stepX = vx == 0 ? 1 : Math.sign(vx);
+  var stepY = vy == 0 ? 1 : Math.sign(vy);
 
   // Integral ending indices in grid: one step beyond the final pixel
   var xEnd = Math.floor(x2 + 0.5) + stepX;
