@@ -24,11 +24,11 @@ function plotLineAmanatidesWoo(grid, width, height, x1, y1, x2, y2)
   var x = Math.floor(ux + 0.5);
   var y = Math.floor(uy + 0.5);
 
-  // Intregral step increments
+  // Integral step increments
   var stepX = Math.sign(vx);
   var stepY = Math.sign(vy);
 
-  // Integral ending indices in grid: one step beyond the final pxiel
+  // Integral ending indices in grid: one step beyond the final pixel
   var xEnd = Math.floor(x2 + 0.5) + stepX;
   var yEnd = Math.floor(y2 + 0.5) + stepY;
 
